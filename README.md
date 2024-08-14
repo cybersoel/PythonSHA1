@@ -24,18 +24,17 @@
 
 ---
 
----
-
 <h4>Tip: Any configuration options not mentioned in the walkthrough can be left at their default settings</h4>
 
 ---
+## Setting Up the Environment
+
+<br />
+<br />
 
 
 
----
-
-1
-
+ - We'll be using Visual Studio Code for this project. Start by creating a new folder named [SHA1-PASSWORD-CRACKER] and within it, create a file called [main.py].
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/XDhOPxM.png">
@@ -45,11 +44,7 @@
 <br />
 
 
-
-
-
-2
-
+ - In main.py, we'll begin with the standard Python idiom to check if the script is being run as the main program:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/r3NWO9o.png">
@@ -60,7 +55,13 @@
 
 
 
-3
+---
+## User Input and Data Preparation
+
+<br />
+<br />
+
+ - The first step is to prompt the user for the SHA1 hash they want to crack:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/Akx1yEh.png">
@@ -70,10 +71,7 @@
 <br />
 
 
-
-
-
-4
+ - To ensure consistency, we'll clean up the user input by removing any leading or trailing spaces and converting it to lowercase:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/QnopHhE.png">
@@ -82,9 +80,13 @@
 <br />
 <br />
 
+---
+## Obtaining a Password List
 
+<br />
+<br />
 
-5
+ - For our dictionary attack, we need a list of common passwords. These lists are often used in ethical hacking and can be found online.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/PKNvEHO.png">
@@ -93,8 +95,7 @@
 <br />
 <br />
 
-
-6
+ - Search for "password list file" in your preferred search engine.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/YY8XZJH.png">
@@ -103,8 +104,7 @@
 <br />
 <br />
 
-
-7
+ - Once you find a suitable list, copy the URL of the file.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/Eyeq2Kp.png">
@@ -113,9 +113,7 @@
 <br />
 <br />
 
-
-
-8
+ - Use the cURL command in the VS Code terminal to download the file. We'll rename it to [passwords.txt] for simplicity:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/gU2vIjK.png">
@@ -124,8 +122,7 @@
 <br />
 <br />
 
-
-9
+ - You should now see passwords.txt in your project folder.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/eWh93TK.png">
@@ -134,9 +131,11 @@
 <br />
 <br />
 
+---
+## Implementing the Password Cracking Logic
 
 
-10
+ - Now, let's implement the core logic. We'll read the password file, iterate through each line, and compare it to the user's input:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/DFT6jeC.png">
@@ -145,8 +144,7 @@
 <br />
 <br />
 
-
-11
+ - To compare the passwords, we need to convert each password to its SHA1 hash. We'll create a function for this:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/hRDqGcw.png">
@@ -156,8 +154,7 @@
 <br />
 
 
-
-12
+ - Let's define the `convert_text_to_sha1()` function. First, we need to import the necessary module.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/XnX4w8s.png">
@@ -167,7 +164,7 @@
 <br />
 
 
-13
+ - The `hashlib` module provides various hashing algorithms, including SHA1.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/rQ2SWqV.png">
@@ -177,7 +174,7 @@
 <br />
 
 
-14
+ - Here's our function to convert text to SHA1:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/XEoYhjN.png">
@@ -186,8 +183,7 @@
 <br />
 <br />
 
-
-15
+ - We use the `encode()` method to convert the string to bytes, specifying 'utf-8' encoding for clarity.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/Xx3urYk.png">
@@ -198,9 +194,7 @@
 
 
 
-
-
-16
+ - The `hexdigest()` method returns the hash as a string of hexadecimal digits, which is what we want for comparison.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/lnMtot0.png">
@@ -209,8 +203,14 @@
 <br />
 <br />
 
+---
+## Comparing Hashes and Finalizing the Program
 
-17
+<br />
+<br />
+
+
+ - Back in our main logic, we now have the SHA1 hash of each password from the file.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/0IZqFnL.png">
@@ -219,9 +219,7 @@
 <br />
 <br />
 
-
-
-18
+ - We can compare this hash with the user's input:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/ktC7lip.png">
@@ -230,9 +228,7 @@
 <br />
 <br />
 
-
-
-19
+ - If we find a match, we'll print the cracked password and exit the loop:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/cL7OVSb.png">
@@ -241,10 +237,7 @@
 <br />
 <br />
 
-
-
-
-20
+ - If we've gone through the entire file without finding a match, we'll inform the user:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/GGAPM57.png">
@@ -253,8 +246,13 @@
 <br />
 <br />
 
+---
+## Testing the Program
 
-21
+<br />
+<br />
+
+ - Our SHA1 password cracker is now complete. Let's test it with two scenarios.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/dI9ablL.png">
@@ -264,11 +262,7 @@
 <br />
 
 
-
-
-
-
-22
+ - First, we'll test with a hash that exists in our password list:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/wv6lHpR.png">
@@ -279,10 +273,7 @@
 
 
 
-
-
-
-23
+ - Choose a random string from passwords.txt and use an online SHA1 generator to get its hash.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/xjoTV37.png">
@@ -293,10 +284,7 @@
 
 
 
-
-
-
-24
+ - Run the program and enter this SHA1 value.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/QnwvW9c.png">
@@ -307,10 +295,7 @@
 
 
 
-
-
-
-25
+ - The program should successfully find and display the password.
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/zdiFTFO.png">
@@ -320,11 +305,7 @@
 <br />
 
 
-
-
-
-
-26
+ - Next, let's test with a hash that doesn't exist in our list:
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/GCvPe0l.png">
@@ -334,11 +315,7 @@
 <br />
 
 
-
-
-
-
-27
+ - Enter a random SHA1 hash not in the file. The program should respond with "Password not found".
 <p align="center">
 <br/>
 <img width="597" alt="Portfolio" src="https://i.imgur.com/UhlpIoS.png">
