@@ -20,13 +20,23 @@
 <a name="toc"></a>
 **Table of Contents:**
 
-- 
+- [Setting Up the Environment](#setting-up-the-environment)
+- [User Input and Data Preparation](#user-input-and-data-preparation)
+- [Obtaining a Password List](#obtaining-a-password-list)
+- [Implementing the Password Cracking Logic](#implementing-the-password-cracking-logic)
+- [Comparing Hashes and Finalizing the Program](#comparing-hashes-and-finalizing-the-program)
+- [Testing the Program](#testing-the-program)
+
+
+
 
 ---
 
 <h4>Tip: Any configuration options not mentioned in the walkthrough can be left at their default settings</h4>
 
 ---
+
+[back to top](#toc)
 ## Setting Up the Environment
 
 <br />
@@ -56,6 +66,8 @@
 
 
 ---
+
+[back to top](#toc)
 ## User Input and Data Preparation
 
 <br />
@@ -81,6 +93,8 @@
 <br />
 
 ---
+
+[back to top](#toc)
 ## Obtaining a Password List
 
 <br />
@@ -132,6 +146,8 @@
 <br />
 
 ---
+
+[back to top](#toc)
 ## Implementing the Password Cracking Logic
 
 
@@ -204,6 +220,8 @@
 <br />
 
 ---
+
+[back to top](#toc)
 ## Comparing Hashes and Finalizing the Program
 
 <br />
@@ -247,6 +265,8 @@
 <br />
 
 ---
+
+[back to top](#toc)
 ## Testing the Program
 
 <br />
