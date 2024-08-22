@@ -1,3 +1,26 @@
+# Python: SHA1 Password Exploitation
+
+## Key Learnings and Skills Demonstrated
+
+- **Python Programming**: Developed a functional script demonstrating proficiency in Python syntax, file operations, and string manipulation.
+- **Cryptography Basics**: Implemented SHA1 hashing, showcasing understanding of cryptographic hash functions.
+- **Dictionary Attack Simulation**: Created a simple dictionary attack, demonstrating knowledge of common password cracking techniques.
+- **User Input Handling**: Implemented user input prompts and basic input sanitization.
+- **File Handling**: Demonstrated ability to read and process data from external files.
+- **Error Handling**: Implemented basic error handling for file operations and user inputs.
+- **Ethical Hacking Concepts**: Explored the concept of password cracking within an educational context, emphasizing the importance of strong passwords.
+- **Command Line Interface**: Developed a CLI application, showcasing ability to create user-friendly terminal-based tools.
+- **Algorithm Efficiency**: Implemented an efficient method to compare hashes, demonstrating understanding of performance considerations.
+- **Cybersecurity Awareness**: Highlighted the vulnerabilities of weak passwords and the importance of secure hashing algorithms.
+- **Development Environment Setup**: Utilized Visual Studio Code, demonstrating familiarity with modern development environments.
+- **Version Control**: While not explicitly mentioned, the project structure suggests an understanding of project organization beneficial for version control.
+- **Documentation**: Created clear, step-by-step documentation of the development process, showcasing technical writing skills.
+- **Problem-Solving**: Demonstrated ability to break down a complex task into manageable steps and implement a solution.
+- **Testing and Validation**: Conducted basic testing scenarios to verify the functionality of the script.
+
+This project simulates a basic password cracking scenario, providing hands-on experience with cryptographic concepts and Python programming. The skills demonstrated are directly applicable to roles in cybersecurity, particularly in areas of password security and ethical hacking. It showcases the ability to create tools for security testing and vulnerability assessment, while also emphasizing the importance of strong password practices.
+
+
 <h1 align="center">Summary Diagram</h1>
 
 
